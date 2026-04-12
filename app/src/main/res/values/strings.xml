@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">AcompañaMe</string>
+
+    <string name="btnIniciarSesion_bienvenida">INICIAR SESIÓN</string>
+    <string name="btnCrearCuenta_bienvenida">REGISTRARSE</string>
+
+    <string name="editTextUsuario_login">Usuario</string>
+    <string name="editTextPassword_login">Contraseña</string>
+    <string name="btnIniciarSesion_login">INICIAR SESIÓN</string>
+
+    <string name="cabeceraRegistro_login">Registro de usuario</string>
+    <string name="nombreRegistro_login">Nombre</string>
+    <string name="apellidosRegistro_login">Apellidos</string>
+    <string name="ciudadRegistro_login">Ciudad</string>
+    <string name="hospitalRegistro_login">Hospital</string>
+    <string name="enfermedadRegistro_login">Enfermedad</string>
+    <string name="breveDescripcionRegistro_login">Breve descripción</string>
+    <string name="btnSiguiente">SIGUIENTE</string>
+    <string name="email_login">Email</string>
+    <string name="telefono_login">Teléfono</string>
+    <string name="contraseña_login">Password</string>
+    <string name="confirmarContraseña_login">Confirmar Password</string>
+    <string name="btnRegistrarse">REGISTRARSE</string>
+
+    <string name="btnVolverPrincipal">VOLVER A LA PANTALLA PRINCIPAL</string>
+    <string name="registroCompletado">Registro completado</string>
+    <string name="toastErrorCrearUsuario">No se ha podido guardar el usuario correctamente</string>
+
+    <string name="toastErrorLoginUsuario">No se ha podido iniciar sesión</string>
+
+
+
+    <string name="BienvenidoUser">Bienvenido, </string>
+
+
 </resources>

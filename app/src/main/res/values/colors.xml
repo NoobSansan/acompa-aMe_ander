@@ -2,5 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="FondoPantallaInicio">#E38E7B</color>
+    <color name="FondoPantallaInicio">#FFFFFFFF</color>
+    <color name="BotonesInicio">#1e6fbf</color>
 </resources>

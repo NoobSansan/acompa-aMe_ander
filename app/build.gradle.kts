@@ -41,6 +41,8 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("com.android.volley:volley:1.2.1")
+    testImplementation("org.mockito:mockito-core:5.+")
+    testImplementation("org.robolectric:robolectric:4.10")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

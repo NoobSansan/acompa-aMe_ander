@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.PROYECTO_GRUPO_2" parent="Base.Theme.PROYECTO_GRUPO_2" />
+
+    <style name="drawerTextApperance" parent="android:Widget.TextView">
+
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
 </resources>

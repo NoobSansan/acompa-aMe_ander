@@ -29,8 +29,13 @@
     <string name="toastErrorLoginUsuario">No se ha podido iniciar sesión</string>
 
 
-
     <string name="BienvenidoUser">Bienvenido, </string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_fetch">Buscar</string>
+    <string name="nav_contacts">Contactos</string>
+    <string name="nav_share">Sobre AcompañaMe</string>
+    <string name="nav_web">Guia Usuario</string>
+    <string name="nav_others">Otros</string>
 
 
 </resources>

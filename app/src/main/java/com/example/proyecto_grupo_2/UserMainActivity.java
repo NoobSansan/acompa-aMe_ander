@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -21,19 +20,18 @@ import androidx.fragment.app.Fragment;
 import com.example.proyecto_grupo_2.databinding.ActivityUserMainBinding;
 import com.google.android.material.navigation.NavigationView;
 
-import org.w3c.dom.Text;
 import java.util.Objects;
 
 public class UserMainActivity extends AppCompatActivity {
 
     private ActivityUserMainBinding bind;
 
-    //protected TextView nombreUser;
+    protected TextView nombreUser;
     //protected TextView apellidosUser;
     protected Bundle extras;    //"ARRAY" DE PAQUETES
 
     protected String nombre="";
-    protected String apellidos="";
+    //protected String apellidos="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +57,10 @@ public class UserMainActivity extends AppCompatActivity {
 
                 int itemID = menuItem.getItemId();
                 if (itemID == R.id.nav_home){
-                    Toast.makeText(getApplicationContext(),"Menú inicio", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Menú inicio", Toast.LENGTH_LONG).show();
                     //fragmentTransaction = true;
+                    Intent intent = new Intent(UserMainActivity.this, MiPerfilActivity.class);
+                    startActivity(intent);
                 }else if (itemID == R.id.nav_fetch){
                     //Toast.makeText(getApplicationContext(),"Menú Buscar", Toast.LENGTH_LONG).show();
                     //fragmentTransaction = true;
@@ -80,7 +80,13 @@ public class UserMainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), "Menú Guia Usuario", Toast.LENGTH_LONG).show();
                     //fragmentTransaction = true;
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("https://www.google.com"));
+                    intent.setData(Uri.parse("https://acompaname.gitbook.io/acompaname-manual-de-usuario"));
+                    startActivity(intent);
+
+                }else if (itemID == R.id.nav_close) {
+                    //Toast.makeText(getApplicationContext(), "Cerrar Sesión", Toast.LENGTH_LONG).show();
+                    //fragmentTransaction = true;
+                    Intent intent = new Intent(UserMainActivity.this, LoginActivity.class);
                     startActivity(intent);
 
                 }
@@ -123,15 +129,16 @@ public class UserMainActivity extends AppCompatActivity {
             }
         };
 
-        //nombreUser = (TextView) findViewById(R.id.textViewNombre_userMain);
+        nombreUser = (TextView) findViewById(R.id.textViewNombre_userMain);
         //apellidosUser = (TextView) findViewById(R.id.textViewApellidos_userMain);
 
         extras = getIntent().getExtras();
 
+        assert extras != null;
         nombre = extras.getString("nombre");
-        apellidos = extras.getString("apellidos");
+        //apellidos = extras.getString("apellidos");
 
-        //nombreUser.setText(nombre);
+        nombreUser.setText(getString(R.string.bienvenida, nombre));
         //apellidosUser.setText(apellidos);
 
         getOnBackPressedDispatcher().addCallback(onBackPressedCallback);

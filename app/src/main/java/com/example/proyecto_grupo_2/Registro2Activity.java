@@ -32,6 +32,8 @@ public class Registro2Activity extends AppCompatActivity {
     protected EditText confirmarPWRegistro2;
     protected Button btnRegistrarseRegistro2;
 
+    protected Bundle extras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class Registro2Activity extends AppCompatActivity {
         passwordRegistro2 = (EditText) findViewById(R.id.editTextPassword_registro2);
         confirmarPWRegistro2 = (EditText) findViewById(R.id.editTextConfirmarPassword_registro2);
         btnRegistrarseRegistro2 = (Button) findViewById(R.id.btnRegistrarse_registro2);
+        extras = getIntent().getExtras();
 
         btnRegistrarseRegistro2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +60,12 @@ public class Registro2Activity extends AppCompatActivity {
 
                 //AL PULSAR EL BOTON SE DEBE DE HACER LA INSERCIÓN EN LA BBDD Y SI ESTA HA SIDO CORRECTA PASAR A LA SIGUIENTE PANTALLA
 
-                final String nombre="Pablo";
-                final String apellidos="Diaz";
-                final String ciudad="Madrid";
-                final String hospital="Gregorio Marañón";
-                final String enfermedad="Sindrome E";
-                final String descripcion="Que tal";
+                final String nombre=extras.getString("nombre");
+                final String apellidos=extras.getString("apellidos");
+                final String ciudad=extras.getString("ciudad");
+                final String hospital=extras.getString("hospital");
+                final String enfermedad=extras.getString("enfermedad");
+                final String descripcion=extras.getString("descripcion");
                 final String email=emailRegistro2.getText().toString();
                 final String telefono=tlfRegistro2.getText().toString();
                 final String pw=confirmarPWRegistro2.getText().toString();

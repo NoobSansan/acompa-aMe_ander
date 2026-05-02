@@ -34,6 +34,11 @@
                     android:icon="@drawable/ic_guide"
                     android:title="@string/nav_web"/>
 
+                <item
+                    android:id="@+id/nav_close"
+                    android:icon="@drawable/ic_close"
+                    android:title="@string/cerrar_sesion"/>
+
 
             </group>
 

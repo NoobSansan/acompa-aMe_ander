@@ -30,12 +30,14 @@
 
 
     <string name="BienvenidoUser">Bienvenido, </string>
-    <string name="nav_home">Inicio</string>
+    <string name="nav_home">Mi Perfil</string>
     <string name="nav_fetch">Buscar</string>
     <string name="nav_contacts">Contactos</string>
     <string name="nav_share">Sobre AcompañaMe</string>
     <string name="nav_web">Guia Usuario</string>
     <string name="nav_others">Otros</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="bienvenida">Bienvenid@, %1$s</string>
 
 
 </resources>

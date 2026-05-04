@@ -11,7 +11,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest {
 
     //URL QUE CONECTA CON EL LOCALHOST DE APACHE
-    private static final String RegisterRequestUrl = "http://192.168.1.39/Register.php";
+    private static final String RegisterRequestUrl = "http://10.0.2.2/acompanamedb/index.php?accion=registrar";
     private Map<String,String> params;
 
     public RegisterRequest(String nombre, String apellidos, String ciudad, String hospital, String enfermedad, String descripcion, String email, String telefono, String pw, Response.Listener<String> listener) {

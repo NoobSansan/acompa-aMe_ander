@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class Registro1Activity extends AppCompatActivity {
     protected EditText enfermedadRegistro1;
     protected EditText breveDescripcionRegistro1;
     protected Button btnSiguiente;
+    protected Button btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class Registro1Activity extends AppCompatActivity {
         enfermedadRegistro1 = (EditText) findViewById(R.id.editTextEnfermedad_registro1);
         breveDescripcionRegistro1 = findViewById(R.id.editTextBreveDescripcion_registro1);
         btnSiguiente = (Button) findViewById(R.id.btnSiguiente_registro1);
+        btnVolver = (Button) findViewById(R.id.btnVolver_registro1);
 
 
         //PASAR A LA SIGUIENTE PANTALLA DEL REGISTRO
@@ -60,11 +63,26 @@ public class Registro1Activity extends AppCompatActivity {
                 pasarPantalla.putExtra("enfermedad", enfermedadRegistro1.getText().toString());
                 pasarPantalla.putExtra("hospital",hospitalRegistro1.getText().toString());
                 pasarPantalla.putExtra("descripcion",breveDescripcionRegistro1.getText().toString());
+
+                if(nombreRegistro1.getText().toString().trim().isEmpty() ||
+                        apellidosRegistro1.getText().toString().trim().isEmpty() ||
+                        ciudadRegistro1.getText().toString().trim().isEmpty() ||
+                        hospitalRegistro1.getText().toString().trim().isEmpty() ||
+                        enfermedadRegistro1.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(Registro1Activity.this, "Hay campos obligatorios sin completar.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 finish();
                 startActivity(pasarPantalla);
 
             }
         });
-
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pasarpantalla = new Intent(Registro1Activity.this, BienvenidaActivity.class);
+                startActivity(pasarpantalla);
+            }
+        });
     }
 }

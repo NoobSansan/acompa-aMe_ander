@@ -31,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     protected EditText editTextPassword;
     protected Button btnIniciarSesion;
 
+    protected Button btnVolver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextUsuario = (EditText) findViewById(R.id.editTextUsuario_login);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword_login);
         btnIniciarSesion = (Button) findViewById(R.id.btnIniciarSesion_login);
+        btnVolver = (Button) findViewById(R.id.volver_login2);
 
         //BTN INICIAR SESION
 
@@ -109,6 +112,14 @@ public class LoginActivity extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
 
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pasarpantalla = new Intent(LoginActivity.this, BienvenidaActivity.class);
+                startActivity(pasarpantalla);
             }
         });
 

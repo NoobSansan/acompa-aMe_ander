@@ -32,6 +32,8 @@ public class Registro2Activity extends AppCompatActivity {
     protected EditText confirmarPWRegistro2;
     protected Button btnRegistrarseRegistro2;
 
+    protected Button btnVolver;
+
     protected Bundle extras;
 
     @Override
@@ -53,6 +55,7 @@ public class Registro2Activity extends AppCompatActivity {
         confirmarPWRegistro2 = (EditText) findViewById(R.id.editTextConfirmarPassword_registro2);
         btnRegistrarseRegistro2 = (Button) findViewById(R.id.btnRegistrarse_registro2);
         extras = getIntent().getExtras();
+        btnVolver = (Button) findViewById(R.id.btnVolver_registro2);
 
         btnRegistrarseRegistro2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +72,13 @@ public class Registro2Activity extends AppCompatActivity {
                 final String email=emailRegistro2.getText().toString();
                 final String telefono=tlfRegistro2.getText().toString();
                 final String pw=confirmarPWRegistro2.getText().toString();
+
+                if(emailRegistro2.getText().toString().trim().isEmpty() ||
+                        passwordRegistro2.getText().toString().trim().isEmpty() ||
+                        confirmarPWRegistro2.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(Registro2Activity.this, "Hay campos obligatorios sin completar.", Toast.LENGTH_SHORT).show();;
+                    return;
+                }
 
                 Response.Listener<String> respListener = new Response.Listener<String>() {
                     @Override
@@ -101,6 +111,14 @@ public class Registro2Activity extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(Registro2Activity.this);
                 queue.add(rr);
 
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pasarpantalla = new Intent(Registro2Activity.this, Registro1Activity.class);
+                startActivity(pasarpantalla);
             }
         });
     }

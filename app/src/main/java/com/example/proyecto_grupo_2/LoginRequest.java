@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest {
 
-    private static final String LoginRequestUrl = "http://192.168.1.39/Login.php";
+    private static final String LoginRequestUrl = "http://10.0.2.2/acompanamedb/index.php?accion=login";
     private Map<String,String> params;
 
     public LoginRequest(String email, String pw, Response.Listener<String> listener) {
